@@ -12,8 +12,8 @@ const Login = () => {
   const { toast } = useToast();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    username: "admin",
+    password: "password",
     rememberMe: false,
   });
 

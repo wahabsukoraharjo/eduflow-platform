@@ -10,6 +10,14 @@ import courseSQL from "@/assets/course-sql.jpg";
 import courseFlutter from "@/assets/course-flutter.jpg";
 import courseNetworking from "@/assets/course-networking.jpg";
 import courseBI from "@/assets/course-bi.jpg";
+import courseQATester from "@/assets/course-qa-tester.jpg";
+import courseAgileScrum from "@/assets/course-agile-scrum.jpg";
+import courseLinux from "@/assets/course-linux.jpg";
+import courseDataStorytelling from "@/assets/course-data-storytelling.jpg";
+import courseGoogleAnalytics from "@/assets/course-google-analytics.jpg";
+import courseDigitalMarketing from "@/assets/course-digital-marketing.jpg";
+import courseCanva from "@/assets/course-canva.jpg";
+import courseContentCreator from "@/assets/course-content-creator.jpg";
 
 export interface Course {
   id: string;
@@ -249,6 +257,158 @@ export const courses: Course[] = [
       "BI Tools Overview (Power BI, Tableau)",
       "Dashboard Design Principles",
       "BI Project: Sales Analytics Dashboard"
+    ]
+  },
+  {
+    id: "qa-tester-101",
+    title: "QA Tester 101: Menemukan Bug Sebelum Ditemukan User",
+    description: "Pelajari teknik testing manual dan exploratory testing untuk menemukan bug lebih awal. Kursus ini mencakup test case design, bug reporting, dan mindset seorang QA profesional.",
+    image: courseQATester,
+    schedule: "15 Maret 2025 - 15 Mei 2025",
+    duration: "8 Minggu",
+    instructor: "Yoga Pratama",
+    syllabus: [
+      "Pengenalan Software Testing",
+      "Types of Testing (Functional, Non-Functional)",
+      "Test Case Design Techniques",
+      "Exploratory Testing Strategies",
+      "Bug Reporting yang Efektif",
+      "Test Management Tools (Jira, TestRail)",
+      "API Testing Basics",
+      "Mobile App Testing"
+    ]
+  },
+  {
+    id: "agile-scrum",
+    title: "Agile & Scrum: Cara Kerja Startup Unicorn yang Wajib Kamu Tahu",
+    description: "Pahami metodologi Agile dan framework Scrum yang digunakan startup unicorn. Pelajari sprint planning, daily standup, retrospective, dan cara kolaborasi tim yang efektif.",
+    image: courseAgileScrum,
+    schedule: "20 Maret 2025 - 17 April 2025",
+    duration: "4 Minggu",
+    instructor: "Reza Firmansyah",
+    syllabus: [
+      "Pengenalan Agile Manifesto",
+      "Scrum Framework Overview",
+      "Roles: Product Owner, Scrum Master, Dev Team",
+      "Sprint Planning dan Backlog Grooming",
+      "Daily Standup dan Sprint Review",
+      "Retrospective yang Produktif",
+      "User Stories dan Estimation",
+      "Kanban vs Scrum"
+    ]
+  },
+  {
+    id: "linux-survival",
+    title: "Linux Survival Guide: Perintah Dasar Terminal yang Wajib Tahu",
+    description: "Kuasai command line Linux dari dasar. Kursus ini mengajarkan navigasi filesystem, file management, permissions, dan scripting dasar yang wajib dikuasai setiap developer.",
+    image: courseLinux,
+    schedule: "25 Maret 2025 - 25 Mei 2025",
+    duration: "8 Minggu",
+    instructor: "Bayu Aditya",
+    syllabus: [
+      "Pengenalan Linux dan Terminal",
+      "Navigasi Filesystem (cd, ls, pwd)",
+      "File Operations (cp, mv, rm, mkdir)",
+      "Text Processing (cat, grep, sed, awk)",
+      "File Permissions dan Ownership",
+      "Process Management (ps, top, kill)",
+      "Shell Scripting Basics",
+      "Package Management dan System Admin"
+    ]
+  },
+  {
+    id: "data-storytelling",
+    title: "Data Storytelling: Ubah Angka Membosankan Jadi Grafik Keren",
+    description: "Pelajari seni menyampaikan insight data melalui visualisasi yang menarik. Dari pemilihan chart yang tepat hingga narrative structure, buat presentasi data yang memorable.",
+    image: courseDataStorytelling,
+    schedule: "1 April 2025 - 1 Mei 2025",
+    duration: "4 Minggu",
+    instructor: "Sinta Dewi",
+    syllabus: [
+      "Prinsip Data Storytelling",
+      "Memilih Chart yang Tepat",
+      "Color Theory untuk Visualisasi",
+      "Narrative Structure dalam Data",
+      "Tools: Excel, Google Sheets, Canva",
+      "Infographic Design Basics",
+      "Presentation Delivery Tips",
+      "Portfolio: Data Story Project"
+    ]
+  },
+  {
+    id: "google-analytics",
+    title: "Google Analytics: Baca Data Pengunjung Web agar Iklan Tidak Boncos",
+    description: "Kuasai Google Analytics untuk memahami perilaku pengunjung website. Pelajari cara setup tracking, membaca reports, dan optimasi campaign agar budget iklan tidak terbuang sia-sia.",
+    image: courseGoogleAnalytics,
+    schedule: "5 April 2025 - 5 Juni 2025",
+    duration: "8 Minggu",
+    instructor: "Dian Pratiwi",
+    syllabus: [
+      "Setup Google Analytics 4",
+      "Understanding GA4 Interface",
+      "Traffic Sources dan Acquisition",
+      "User Behavior dan Engagement",
+      "Conversion Tracking Setup",
+      "Custom Events dan Parameters",
+      "Reports dan Dashboard Creation",
+      "Data-Driven Marketing Decisions"
+    ]
+  },
+  {
+    id: "digital-marketing-career",
+    title: "Digital Marketing Career 101: Pilih Jalur Karirmu (Generalis vs Spesialis)",
+    description: "Panduan lengkap memulai karir di digital marketing. Eksplorasi berbagai spesialisasi seperti SEO, Social Media, Content, Performance Marketing dan temukan jalur yang cocok untukmu.",
+    image: courseDigitalMarketing,
+    schedule: "10 April 2025 - 24 April 2025",
+    duration: "2 Minggu",
+    instructor: "Maya Indah",
+    syllabus: [
+      "Landscape Digital Marketing 2025",
+      "Career Path: Generalis vs Spesialis",
+      "SEO Specialist Track",
+      "Social Media Manager Track",
+      "Content Strategist Track",
+      "Performance Marketing Track",
+      "Building Your Portfolio",
+      "Interview Tips dan Salary Negotiation"
+    ]
+  },
+  {
+    id: "canva-marketers",
+    title: "Canva for Marketers: Desain Grafis Profesional Tanpa Skill Desain",
+    description: "Buat desain marketing profesional dengan Canva tanpa perlu skill desain. Dari social media posts hingga presentation, hasilkan konten visual yang standout dalam hitungan menit.",
+    image: courseCanva,
+    schedule: "15 April 2025 - 15 Mei 2025",
+    duration: "4 Minggu",
+    instructor: "Rina Hartati",
+    syllabus: [
+      "Pengenalan Canva Interface",
+      "Template Selection dan Customization",
+      "Brand Kit dan Konsistensi Visual",
+      "Social Media Content Design",
+      "Presentation dan Report Design",
+      "Video dan Animation Basics",
+      "Canva Pro Features",
+      "Content Calendar dan Batch Creation"
+    ]
+  },
+  {
+    id: "content-creator-masterclass",
+    title: "Content Creator Masterclass: Dari Ide Mentah Jadi Konten Berkualitas",
+    description: "Pelajari proses lengkap content creation dari ideation hingga publishing. Kursus ini mencakup copywriting, video production basics, dan strategi grow audience di berbagai platform.",
+    image: courseContentCreator,
+    schedule: "20 April 2025 - 20 Juni 2025",
+    duration: "8 Minggu",
+    instructor: "Arief Budiman",
+    syllabus: [
+      "Content Creation Mindset",
+      "Ideation dan Content Planning",
+      "Copywriting untuk Social Media",
+      "Basic Video Production",
+      "Editing dengan CapCut/Premiere",
+      "Platform Strategy (IG, TikTok, YouTube)",
+      "Analytics dan Content Optimization",
+      "Monetization dan Brand Deals"
     ]
   }
 ];

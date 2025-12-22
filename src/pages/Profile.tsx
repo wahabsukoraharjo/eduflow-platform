@@ -5,9 +5,9 @@ import Header from "@/components/layout/Header";
 const Profile = () => {
   // Data profil dummy
   const profile = {
-    username: "johndoe",
-    fullname: "John Doe",
-    email: "john.doe@email.com",
+    username: "jotamvan",
+    fullname: "Jo Tamvan",
+    email: "jotamvan@email.com",
     enrolledCourses: 3,
     completedCourses: 1,
   };

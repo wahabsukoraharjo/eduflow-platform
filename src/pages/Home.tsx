@@ -1,9 +1,22 @@
+import { useState, useMemo } from "react";
 import { BookOpen, Users, Award, TrendingUp } from "lucide-react";
 import Header from "@/components/layout/Header";
 import CourseCard from "@/components/CourseCard";
 import { courses } from "@/data/courses";
 
 const Home = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCourses = useMemo(() => {
+    if (!searchQuery.trim()) return courses;
+    
+    const query = searchQuery.toLowerCase();
+    return courses.filter((course) => 
+      course.title.toLowerCase().includes(query) ||
+      course.schedule.toLowerCase().includes(query)
+    );
+  }, [searchQuery]);
+
   const stats = [
     { icon: BookOpen, label: "Total Courses", value: "50+" },
     { icon: Users, label: "Active Students", value: "2,500+" },
@@ -13,7 +26,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       
       <main className="container py-8">
         {/* Hero Section */}
@@ -54,15 +67,26 @@ const Home = () => {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-2xl font-bold text-foreground">Courses Tersedia</h2>
-              <p className="text-muted-foreground">Pilih course yang sesuai dengan minat Anda</p>
+              <p className="text-muted-foreground">
+                {searchQuery 
+                  ? `Menampilkan ${filteredCourses.length} hasil untuk "${searchQuery}"`
+                  : "Pilih course yang sesuai dengan minat Anda"
+                }
+              </p>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {courses.map((course, index) => (
-              <CourseCard key={course.id} course={course} index={index} />
-            ))}
-          </div>
+          {filteredCourses.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {filteredCourses.map((course, index) => (
+                <CourseCard key={course.id} course={course} index={index} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">Tidak ada kursus yang sesuai dengan pencarian Anda.</p>
+            </div>
+          )}
         </section>
       </main>
     </div>

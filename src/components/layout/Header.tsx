@@ -1,9 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
-import { GraduationCap, Home, BookOpen, User, History, LogOut } from "lucide-react";
+import { GraduationCap, Home, User, History, LogOut, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 
-const Header = () => {
+interface HeaderProps {
+  searchQuery?: string;
+  onSearchChange?: (query: string) => void;
+}
+
+const Header = ({ searchQuery = "", onSearchChange }: HeaderProps) => {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const navItems = [
     { path: "/", label: "Home", icon: Home },
@@ -43,7 +50,19 @@ const Header = () => {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          {isHomePage && onSearchChange && (
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Cari kursus atau jadwal..."
+                value={searchQuery}
+                onChange={(e) => onSearchChange(e.target.value)}
+                className="pl-9 w-48 sm:w-64 h-9 text-sm"
+              />
+            </div>
+          )}
           <Link
             to="/login"
             className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-200"
